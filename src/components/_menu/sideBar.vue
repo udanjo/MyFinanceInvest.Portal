@@ -3,7 +3,7 @@
     <nav class="sidebar-panel-nav">
       <router-link to="/bank">Banco</router-link><br />
       <router-link to="/Account">Conta Corrente</router-link><br />
-      <router-link to="/about">Pessoa</router-link><br />
+      <router-link to="/person">Pessoa</router-link><br />
       <router-link to="/about">Sobre</router-link>
     </nav>
   </div>

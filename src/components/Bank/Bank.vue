@@ -66,7 +66,7 @@
           </tr>
         </tbody>
       </table> -->
-      <v-simple-table>
+      <!-- <v-simple-table>
     <template v-slot:default>
       <thead>
         <tr>
@@ -102,7 +102,51 @@
         </tr>
       </tbody>
     </template>
-  </v-simple-table>
+     </v-simple-table> -->
+      <v-data-table
+    :headers="headers"
+    :items="banks"
+    sort-by="id"
+    class="elevation-1"
+  >
+    <!-- <template v-slot:items="{ bank }">
+      <td>{{ bank.id }}</td>
+      <td>{{ bank.code }}</td>
+      <td>{{ bank.description }}</td>
+      <td>Valor: {{ bank.id }}</td>
+          </template> -->
+       <!-- <v-icon
+        small
+        class="mr-2"
+        @click="editItem(item)"
+      >
+        mdi-pencil
+      </v-icon> -->
+
+              <!-- <button @click="alter(bank)" class="btn btn-warning ml-2">
+                Alterar
+              </button>
+              <button @click="remove(bank)" class="btn btn-danger ml-2">
+                Excluir
+              </button> -->
+            
+    <template v-slot:item.actions="{ item }">
+      <v-icon
+        small
+        class="mr-2"
+        @click="alter(item)"
+      >
+      
+        mdi-pencil
+      </v-icon>
+      <v-icon
+        small
+       @click="remove(item)"
+      >
+        mdi-delete
+      </v-icon>
+    </template>
+    </v-data-table>
     </div>
   </div> 
   
@@ -121,18 +165,22 @@ export default {
       bInsert: false,
       bCarregado: false,
       headers: [
+        {
+        text: 'Identificador',
+        value: 'id',
+        align: 'start',        
+      },
       {
-        text: 'code',
+        text: 'Código',
         value: 'code',
-        align: 'left',
-        sortable: false,
+        align: 'right'        
       },
       {
-        text: 'description',
+        text: 'Descrição',
         value: 'description',
-        align: 'left',
-        sortable: false,
+        align: 'left'
       },
+      { text: 'Actions', value: 'actions', sortable: false },
       ],
       desserts: [
           {

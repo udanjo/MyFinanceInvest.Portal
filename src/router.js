@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Bank from './components/Bank/Bank'
 import About from './components/About/About'
 import Account from './components/Account/Account'
+import Person from './components/Person/person'
 
 Vue.use(Router);
 
@@ -32,7 +33,7 @@ export default new Router({
         {
             path: '/person',
             nome: 'Pessoa',
-            component: About
+            component: Person
         }
         // {
         //     path: '/alunoDetalhe/:id',
