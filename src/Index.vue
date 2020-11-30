@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="app">
     <SideBar />
     <div class="marginPrincipal">
       <router-view :key="$route.fullPath"></router-view>
@@ -12,7 +12,7 @@ import Bank from "./components/Bank/Bank";
 import SideBar from "./components/_menu/sideBar";
 
 export default {
-  name: "Index",
+  name: "App",
   components: {
     // eslint-disable-next-line vue/no-unused-components
     Bank,
@@ -27,7 +27,7 @@ export default {
   margin: auto;
 }
 
-#index {
+#app {
   margin-bottom: 5px;
 }
 
