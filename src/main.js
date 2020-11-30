@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import './plugins/axios'
-import App from './App.vue'
+import App from './Index.vue'
 import VueResource from 'vue-resource'
 import BootstrapVue from 'bootstrap-vue'
 // import Vuetify from 'vuetify'
@@ -26,4 +26,4 @@ new Vue({
   store,
   vuetify,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#index')
